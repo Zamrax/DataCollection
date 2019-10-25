@@ -161,7 +161,7 @@ if __name__ == "__main__":
     while True:
         print('What do you want to do?')
         command = input()
-        if command == "Increase new data" or command == "increase new data" or command == "Increase" or command == "increase":
+        if command == "Increase the data" or command == "increase the data" or command == "Increase" or command == "increase":
             print('Designated smoking area?')
             dsa = input()
             result = increase_data(sheet, dsa)
