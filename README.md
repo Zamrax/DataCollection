@@ -10,21 +10,23 @@ Before you start to use the program, make sure to run ```download.sh``` in order
 ### Usage
 In order to start the program, execute ```python3 data_collection.py```.
 
-In the promt window, enter the location of the file you want to work with (e.g. ```\home\usr\Documents\TheSurvey.xlsx```)
+In the promt window, enter the location of the file you want to work with (e.g. ```\home\usr\Documents\TheSurvey.xlsx```).
 
 Then, you can start to work with the program. Here are some commands you can run:
 
-```Increase the data``` or ```increase the data``` or ```Increase``` or ```increase``` - it will allow you to increase the data by one unit only
+```Increase the data``` or ```increase the data``` or ```Increase``` or ```increase``` - it will allow you to increase the data by one unit only.
 
-```Add to the data``` or ```add to the data``` or ```Add``` or ```add``` - it will allow you to increase the data by any amount of units
+```Add to the data``` or ```add to the data``` or ```Add``` or ```add``` - it will allow you to increase the data by any amount of units.
 
-```Decrease the data``` or ```decrease the data``` or ```Decrease``` or ```decrease``` - it will allow you to decrease the data by one unit only
+```Decrease the data``` or ```decrease the data``` or ```Decrease``` or ```decrease``` - it will allow you to decrease the data by one unit only.
 
-```Delete to the data``` or ```delete to the data``` or ```Delete``` or ```delete``` - it will allow you to decrease the data by any amount of units
+```Delete to the data``` or ```delete to the data``` or ```Delete``` or ```delete``` - it will allow you to decrease the data by any amount of units.
+
+```Help``` or ```help``` - it will show all the commands you can run.
 
 ## Built with
-* [Python] (https://www.python.org/) - Programming language used
-* [OpenPYXL] (https://openpyxl.readthedocs.io/en/stable/) - libarary to work with Excel files
+* [Python] (https://www.python.org/) - Programming language used.
+* [OpenPYXL] (https://openpyxl.readthedocs.io/en/stable/) - libarary to work with Excel files.
 
 ## Author
-* **Dmitrii Strizhkov** - *Initial work* - [Zamrax](https://github.com/Zamrax)
+* **Dmitrii Strizhkov** - *Initial work* - [Zamrax](https://github.com/Zamrax).
