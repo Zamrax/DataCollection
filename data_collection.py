@@ -1,6 +1,7 @@
 import openpyxl
 
 
+# Increase the data in the sheet by 1
 def increase_data(sheet, dsa):
     if dsa == "Yes" or dsa == "yes" or dsa == "Y" or dsa == "y":
         print('What type of cigarette? (Cigarettes, Vape, Juul, Iqos, Other)')
@@ -38,6 +39,7 @@ def increase_data(sheet, dsa):
         return 1
 
 
+# Decrease the data in the sheet by 1
 def decrease_data(sheet, dsa):
     if dsa == "Yes" or dsa == "yes" or dsa == "Y" or dsa == "y":
         print('What type of cigarette? (Cigarettes, Vape, Juul, Iqos, Other)')
@@ -75,6 +77,7 @@ def decrease_data(sheet, dsa):
         return 1
 
 
+# Add a certain amount to the data in the sheet
 def add_data(sheet, dsa, amount):
     if dsa == "Yes" or dsa == "yes" or dsa == "Y" or dsa == "y":
         print('What type of cigarette? (Cigarettes, Vape, Juul, Iqos, Other)')
@@ -112,6 +115,7 @@ def add_data(sheet, dsa, amount):
         return 1
 
 
+# Decrease the data in the sheet by certain amount
 def delete_data(sheet, dsa, amount):
     if dsa == "Yes" or dsa == "yes" or dsa == "Y" or dsa == "y":
         print('What type of cigarette? (Cigarettes, Vape, Juul, Iqos, Other)')
