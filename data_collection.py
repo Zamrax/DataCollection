@@ -1,7 +1,8 @@
 import openpyxl
 
-def add_data(sheet, dsa):
-    if dsa == "Yes":
+
+def increase_data(sheet, dsa):
+    if dsa == "Yes" or dsa == "yes" or dsa == "Y" or dsa == "y":
         print('What type of cigarette? (Cigarettes, Vape, Juul, Iqos, Other)')
         type = input()
         if type == "Cigarettes":
@@ -17,7 +18,7 @@ def add_data(sheet, dsa):
         else:
             return 1
         return 0
-    elif dsa == "No":
+    elif dsa == "No" or dsa == "no" or dsa == "N" or dsa == "n":
         print('What type of cigarette? (Cigarettes, Vape, Juul, Iqos, Other)')
         type = input()
         if type == "Cigarettes":
@@ -36,8 +37,9 @@ def add_data(sheet, dsa):
     else:
         return 1
 
-def del_data(sheet, dsa):
-    if dsa == "Yes":
+
+def decrease_data(sheet, dsa):
+    if dsa == "Yes" or dsa == "yes" or dsa == "Y" or dsa == "y":
         print('What type of cigarette? (Cigarettes, Vape, Juul, Iqos, Other)')
         type = input()
         if type == "Cigarettes":
@@ -53,7 +55,7 @@ def del_data(sheet, dsa):
         else:
             return 1
         return 0
-    elif dsa == "No":
+    elif dsa == "No" or dsa == "no" or dsa == "N" or dsa == "n":
         print('What type of cigarette? (Cigarettes, Vape, Juul, Iqos, Other)')
         type = input()
         if type == "Cigarettes":
@@ -72,24 +74,115 @@ def del_data(sheet, dsa):
     else:
         return 1
 
+
+def add_data(sheet, dsa, amount):
+    if dsa == "Yes" or dsa == "yes" or dsa == "Y" or dsa == "y":
+        print('What type of cigarette? (Cigarettes, Vape, Juul, Iqos, Other)')
+        type = input()
+        if type == "Cigarettes":
+            sheet['B2'].value += amount
+        elif type == "Vape":
+            sheet['B3'].value += amount
+        elif type == "Juul":
+            sheet['B4'].value += amount
+        elif type == "Iqos":
+            sheet['B5'].value += amount
+        elif type == "Other":
+            sheet['B6'].value += amount
+        else:
+            return 1
+        return 0
+    elif dsa == "No" or dsa == "no" or dsa == "N" or dsa == "n":
+        print('What type of cigarette? (Cigarettes, Vape, Juul, Iqos, Other)')
+        type = input()
+        if type == "Cigarettes":
+            sheet['C2'].value += amount
+        elif type == "Vape":
+            sheet['C3'].value += amount
+        elif type == "Juul":
+            sheet['C4'].value += amount
+        elif type == "Iqos":
+            sheet['C5'].value += amount
+        elif type == "Other":
+            sheet['C6'].value += amount
+        else:
+            return 1
+        return 0
+    else:
+        return 1
+
+
+def delete_data(sheet, dsa, amount):
+    if dsa == "Yes" or dsa == "yes" or dsa == "Y" or dsa == "y":
+        print('What type of cigarette? (Cigarettes, Vape, Juul, Iqos, Other)')
+        type = input()
+        if type == "Cigarettes":
+            sheet['B2'] -= amount
+        elif type == "Vape":
+            sheet['B3'] -= amount
+        elif type == "Juul":
+            sheet['B4'] -= amount
+        elif type == "Iqos":
+            sheet['B5'] -= amount
+        elif type == "Other":
+            sheet['B6'] -= amount
+        else:
+            return 1
+        return 0
+    elif dsa == "No" or dsa == "no" or dsa == "N" or dsa == "n":
+        print('What type of cigarette? (Cigarettes, Vape, Juul, Iqos, Other)')
+        type = input()
+        if type == "Cigarettes":
+            sheet['C2'] -= amount
+        elif type == "Vape":
+            sheet['C3'] -= amount
+        elif type == "Juul":
+            sheet['C4'] -= amount
+        elif type == "Iqos":
+            sheet['C5'] -= amount
+        elif type == "Other":
+            sheet['C6'] -= amount
+        else:
+            return 1
+        return 0
+    else:
+        return 1
+
+
 if __name__ == "__main__":
     print("What file do you want to work with?:")
     file = input()
     wb = openpyxl.load_workbook(file)
     sheet = wb.active
     while True:
-        print('What do you want to do? (Add new)')
+        print('What do you want to do?')
         command = input()
-        if command == "Add new data" or command == "add new data" or command == "Add" or command == "add":
+        if command == "Increase new data" or command == "increase new data" or command == "Increase" or command == "increase":
             print('Designated smoking area?')
             dsa = input()
-            result = add_data(sheet, dsa)
+            result = increase_data(sheet, dsa)
             if result == 1:
                 print('Try again')
-        elif command == "Delete the data" or command == "delete the data" or command == "Delete" or command == "delete":
+        elif command == "Decrease the data" or command == "cecrease the data" or command == "Decrease" or command == "decrease":
             print('Designated smoking area?')
             dsa = input()
-            result = del_data(sheet, dsa)
+            result = decrease_data(sheet, dsa)
+            if result == 1:
+                print('Try again')
+        elif command == "Add to the data" or command == "add to the data" or command == "Add" or command == "add":
+            print('Designated smoking area?')
+            dsa = input()
+            print('How many units?')
+            amount = input()
+            result = add_data(sheet, dsa, amount)
+            if result == 1:
+                print('Try again')
+        elif command == "Delete from the data" or command == "delete from the data" or command == "Delete" or command == "delete":
+            print('Designated smoking area?')
+            dsa = input()
+            print('How many units?')
+            amount = input()
+            result = delete_data(sheet, dsa, amount)
             if result == 1:
                 print('Try again')
         elif command == "Print data" or command == "print" or command = "Print":
