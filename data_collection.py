@@ -189,7 +189,7 @@ if __name__ == "__main__":
             result = delete_data(sheet, dsa, amount)
             if result == 1:
                 print('Try again')
-        elif command == "Print data" or command == "print" or command = "Print":
+        elif command == "Print data" or command == "print" or command == "Print":
             for i in range(1, sheet.max_row + 1):
                 for j in range(1, sheet.max_column + 1):
                     cell = sheet.cell(row = i, column = j)
