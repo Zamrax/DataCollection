@@ -45,15 +45,30 @@ def decrease_data(sheet, dsa):
         print('What type of cigarette? (Cigarettes, Vape, Juul, Iqos, Other)')
         type = input()
         if type == "Cigarettes":
-            sheet['B2'] -= 1
+            if sheet['B2'].value == 0:
+                print("Cannot go below 0")
+                return 0
+            sheet['B2'].value -= 1
         elif type == "Vape":
-            sheet['B3'] -= 1
+            if sheet['B3'].value == 0:
+                print("Cannot go below 0")
+                return 0
+            sheet['B3'].value -= 1
         elif type == "Juul":
-            sheet['B4'] -= 1
+            if sheet['B4'].value == 0:
+                print("Cannot go below 0")
+                return 0
+            sheet['B4'].value -= 1
         elif type == "Iqos":
-            sheet['B5'] -= 1
+            if sheet['B5'].value == 0:
+                print("Cannot go below 0")
+                return 0
+            sheet['B5'].value -= 1
         elif type == "Other":
-            sheet['B6'] -= 1
+            if sheet['B6'].value == 0:
+                print("Cannot go below 0")
+                return 0
+            sheet['B6'].value -= 1
         else:
             return 1
         return 0
@@ -61,15 +76,30 @@ def decrease_data(sheet, dsa):
         print('What type of cigarette? (Cigarettes, Vape, Juul, Iqos, Other)')
         type = input()
         if type == "Cigarettes":
-            sheet['C2'] -= 1
+            if sheet['C2'].value == 0:
+                print("Cannot go below 0")
+                return 0
+            sheet['C2'].value -= 1
         elif type == "Vape":
-            sheet['C3'] -= 1
+            if sheet['C3'].value == 0:
+                print("Cannot go below 0")
+                return 0
+            sheet['C3'].value -= 1
         elif type == "Juul":
-            sheet['C4'] -= 1
+            if sheet['C4'].value == 0:
+                print("Cannot go below 0")
+                return 0
+            sheet['C4'].value -= 1
         elif type == "Iqos":
-            sheet['C5'] -= 1
+            if sheet['C5'].value == 0:
+                print("Cannot go below 0")
+                return 0
+            sheet['C5'].value -= 1
         elif type == "Other":
-            sheet['C6'] -= 1
+            if sheet['C6'].value == 0:
+                print("Cannot go below 0")
+                return 0
+            sheet['C6'].value -= 1
         else:
             return 1
         return 0
@@ -121,15 +151,35 @@ def delete_data(sheet, dsa, amount):
         print('What type of cigarette? (Cigarettes, Vape, Juul, Iqos, Other)')
         type = input()
         if type == "Cigarettes":
-            sheet['B2'] -= amount
+            temp = sheet['B2'].value
+            if temp - amount < 0:
+                print("Cannot go below 0")
+                return 0
+            sheet['B2'].value -= amount
         elif type == "Vape":
-            sheet['B3'] -= amount
+            temp = sheet['B3'].value
+            if temp - amount < 0:
+                print("Cannot go below 0")
+                return 0
+            sheet['B3'].value -= amount
         elif type == "Juul":
-            sheet['B4'] -= amount
+            temp = sheet['B4'].value
+            if temp - amount < 0:
+                print("Cannot go below 0")
+                return 0
+            sheet['B4'].value -= amount
         elif type == "Iqos":
-            sheet['B5'] -= amount
+            temp = sheet['B5'].value
+            if temp - amount < 0:
+                print("Cannot go below 0")
+                return 0
+            sheet['B5'].value -= amount
         elif type == "Other":
-            sheet['B6'] -= amount
+            temp = sheet['B6'].value
+            if temp - amount < 0:
+                print("Cannot go below 0")
+                return 0
+            sheet['B6'].value -= amount
         else:
             return 1
         return 0
@@ -137,15 +187,35 @@ def delete_data(sheet, dsa, amount):
         print('What type of cigarette? (Cigarettes, Vape, Juul, Iqos, Other)')
         type = input()
         if type == "Cigarettes":
-            sheet['C2'] -= amount
+            temp = sheet['C2'].value
+            if temp - amount < 0:
+                print("Cannot go below 0")
+                return 0
+            sheet['C2'].value -= amount
         elif type == "Vape":
-            sheet['C3'] -= amount
+            temp = sheet['C3'].value
+            if temp - amount < 0:
+                print("Cannot go below 0")
+                return 0
+            sheet['C3'].value -= amount
         elif type == "Juul":
-            sheet['C4'] -= amount
+            temp = sheet['C4'].value
+            if temp - amount < 0:
+                print("Cannot go below 0")
+                return 0
+            sheet['C4'].value -= amount
         elif type == "Iqos":
-            sheet['C5'] -= amount
+            temp = sheet['C5'].value
+            if temp - amount < 0:
+                print("Cannot go below 0")
+                return 0
+            sheet['C5'].value -= amount
         elif type == "Other":
-            sheet['C6'] -= amount
+            temp = sheet['C6'].value
+            if temp - amount < 0:
+                print("Cannot go below 0")
+                return 0
+            sheet['C6'].value -= amount
         else:
             return 1
         return 0
@@ -167,7 +237,7 @@ if __name__ == "__main__":
             result = increase_data(sheet, dsa)
             if result == 1:
                 print('Try again')
-        elif command == "Decrease the data" or command == "cecrease the data" or command == "Decrease" or command == "decrease":
+        elif command == "Decrease the data" or command == "decrease the data" or command == "Decrease" or command == "decrease":
             print('Designated smoking area?')
             dsa = input()
             result = decrease_data(sheet, dsa)
@@ -195,6 +265,16 @@ if __name__ == "__main__":
                     cell = sheet.cell(row = i, column = j)
                     print(cell.value,end=' | ')
                 print('\n')
+        elif command == "Help" or command == "help":
+            print("Usage:")
+            print("Increase data by one:")
+            print("Increase the data / increase the data / Increase/ increase\n")
+            print("Dcrease data by one:")
+            print("Decrease the data / decrease the data / Decrease / decrease\n")
+            print("Increase data by certain amount:")
+            print("Add to the data / add to the data / Add / add\n")
+            print("Decrease data by certain amount:")
+            print("Delete from the data / delete from the data / Delete / delete\n")
         elif command == "Exit" or command == "exit":
             break
         else:
