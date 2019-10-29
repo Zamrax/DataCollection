@@ -1,8 +1,13 @@
-import openpyxl
+import openpyxl  # Library for working with Excel files.
 
 
-# Increase the data in the sheet by 1
-def increase_data(sheet, dsa):
+def increase_data(sheet, dsa) -> int:
+    """
+    This function allows user to add 1 element into the desired data section.
+
+    Returns 0 if the data was added successfully and 1 if failed to add it.
+    """
+
     if dsa == "Yes" or dsa == "yes" or dsa == "Y" or dsa == "y":
         print('What type of cigarette? (Cigarettes, Vape, Juul, Iqos, Other)')
         type = input()
@@ -39,8 +44,12 @@ def increase_data(sheet, dsa):
         return 1
 
 
-# Decrease the data in the sheet by 1
-def decrease_data(sheet, dsa):
+def decrease_data(sheet, dsa) -> int:
+    """
+    This function allows user to delete 1 element from the desired data section.
+
+    Returns 0 if the data was added successfully and 1 if failed to add it.
+    """
     if dsa == "Yes" or dsa == "yes" or dsa == "Y" or dsa == "y":
         print('What type of cigarette? (Cigarettes, Vape, Juul, Iqos, Other)')
         type = input()
@@ -107,8 +116,12 @@ def decrease_data(sheet, dsa):
         return 1
 
 
-# Add a certain amount to the data in the sheet
-def add_data(sheet, dsa, amount):
+def add_data(sheet, dsa, amount) -> int:
+    """
+    This function allows user to add any number of elements into the desired data section.
+
+    Returns 0 if the data was added successfully and 1 if failed to add it.
+    """
     if dsa == "Yes" or dsa == "yes" or dsa == "Y" or dsa == "y":
         print('What type of cigarette? (Cigarettes, Vape, Juul, Iqos, Other)')
         type = input()
@@ -145,8 +158,12 @@ def add_data(sheet, dsa, amount):
         return 1
 
 
-# Decrease the data in the sheet by certain amount
-def delete_data(sheet, dsa, amount):
+def delete_data(sheet, dsa, amount) -> int:
+    """
+    This function allows user to delete any number of elements from the desired data section.
+
+    Returns 0 if the data was added successfully and 1 if failed to add it.
+    """
     if dsa == "Yes" or dsa == "yes" or dsa == "Y" or dsa == "y":
         print('What type of cigarette? (Cigarettes, Vape, Juul, Iqos, Other)')
         type = input()
@@ -231,13 +248,15 @@ if __name__ == "__main__":
     while True:
         print('What do you want to do?')
         command = input()
-        if command == "Increase the data" or command == "increase the data" or command == "Increase" or command == "increase":
+        if command == "Increase the data" or command == "increase the data" or command == "Increase" or \
+                command == "increase":
             print('Designated smoking area?')
             dsa = input()
             result = increase_data(sheet, dsa)
             if result == 1:
                 print('Try again')
-        elif command == "Decrease the data" or command == "decrease the data" or command == "Decrease" or command == "decrease":
+        elif command == "Decrease the data" or command == "decrease the data" or command == "Decrease" or \
+                command == "decrease":
             print('Designated smoking area?')
             dsa = input()
             result = decrease_data(sheet, dsa)
@@ -251,7 +270,8 @@ if __name__ == "__main__":
             result = add_data(sheet, dsa, amount)
             if result == 1:
                 print('Try again')
-        elif command == "Delete from the data" or command == "delete from the data" or command == "Delete" or command == "delete":
+        elif command == "Delete from the data" or command == "delete from the data" or command == "Delete" or \
+                command == "delete":
             print('Designated smoking area?')
             dsa = input()
             print('How many units?')
@@ -262,14 +282,14 @@ if __name__ == "__main__":
         elif command == "Print data" or command == "print" or command == "Print":
             for i in range(1, sheet.max_row + 1):
                 for j in range(1, sheet.max_column + 1):
-                    cell = sheet.cell(row = i, column = j)
-                    print(cell.value,end=' | ')
+                    cell = sheet.cell(row=i, column=j)
+                    print(cell.value, end=' | ')
                 print('\n')
         elif command == "Help" or command == "help":
             print("Usage:")
             print("Increase data by one:")
             print("Increase the data / increase the data / Increase/ increase\n")
-            print("Dcrease data by one:")
+            print("Decrease data by one:")
             print("Decrease the data / decrease the data / Decrease / decrease\n")
             print("Increase data by certain amount:")
             print("Add to the data / add to the data / Add / add\n")
